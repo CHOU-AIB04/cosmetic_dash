@@ -45,7 +45,7 @@ const Modify = () => {
           Data.append("old_pic",Modify.old_pic)
           Data.append("qte",Modify.qte)
           Data.append("picture",new_pic.picture)
-          axios.post(`http://localhost/MY_PROJECTS/electronic_project/product.php?update=${id}`,Data).then((res)=>{ 
+          axios.post(`http://localhost/MY_PROJECTS/cosmetic/product.php?update=${id}`,Data).then((res)=>{ 
                 toast.success("Your Annouce is succesfuly added !!");
                 navigate("/Products");
           })
@@ -56,7 +56,7 @@ return (
 
   <>
       <form className='w-[90%] flex gap-5 flex-col items-center relative left-1/2 -translate-x-1/2 mt-10 pb-4' onSubmit={Modifyproduct}>
-          <h1 className='text-blue-900 font-bold text-[20px] md:text-[30px] text-center'>Modifier Product</h1>
+          <h1 className='text-yellow-700 font-bold text-[20px] md:text-[30px] text-center'>Modifier Produit</h1>
           <nav className='grid grid-cols-1 gap-3 w-[90%] place-items-center'>
               <div className='flex flex-col gap-2 w-[80%]'>
                   <label htmlFor="">Nom</label>
@@ -89,7 +89,7 @@ return (
               <input type="hidden" name='old_pic' value={Modify.old_pic} onChange={InputChange}/>
           </nav>
           <div className='w-[80%] pl-10'>
-          <button type='submit' className='w-[120px] h-9 rounded-md sh bg-white text-blue-900 duration-500 transition-all hover:text-white hover:bg-blue-900 self-start'>Modify</button>
+          <button type='submit' className='w-[120px] h-9 rounded-md sh bg-white text-yellow-700 duration-500 transition-all hover:text-white hover:bg-yellow-700 self-start'>Modifier</button>
           </div>
       </form>
   </>

@@ -22,7 +22,7 @@ function App() {
       const Id = window.sessionStorage.getItem("token");
       const decypte = decryptId(Id,secretKey)
       try{
-        axios.get(`http://localhost/MY_PROJECTS/electronic_project/auth.php?id=${decypte}`).then((res)=>{
+        axios.get(`http://localhost/MY_PROJECTS/cosmetic/auth.php?id=${decypte}`).then((res)=>{
           if (res.data === 0) {
             navigate("/Auth");
             toast.error("password or email are incorrect !! try again")
@@ -95,9 +95,9 @@ function App() {
     const fetchData = async () => {
         try {
             const [productsRes, ordersRes, messagesRes] = await Promise.all([
-                axios.get("http://localhost/MY_PROJECTS/electronic_project/product.php"),
-                axios.get("http://localhost/MY_PROJECTS/electronic_project/Order.php"),
-                axios.get("http://localhost/MY_PROJECTS/electronic_project/Contact.php"),
+                axios.get("http://localhost/MY_PROJECTS/cosmetic/product.php"),
+                axios.get("http://localhost/MY_PROJECTS/cosmetic/Order.php"),
+                axios.get("http://localhost/MY_PROJECTS/cosmetic/Contact.php"),
             ]);
             window.sessionStorage.setItem("data",JSON.stringify(productsRes.data))
             setALLProducts(productsRes.data);

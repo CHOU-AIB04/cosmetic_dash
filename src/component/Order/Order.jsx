@@ -19,7 +19,7 @@ const Order = () => {
           {
             label: 'Yes',
             onClick: () => {
-                axios.delete(`http://localhost/MY_PROJECTS/electronic_project/Order.php?type=order_details&item=${id}&qte=${qte}&prod=${prod}`).then((res)=>{
+                axios.delete(`http://localhost/MY_PROJECTS/cosmetic/Order.php?type=order_details&item=${id}&qte=${qte}&prod=${prod}`).then((res)=>{
                     toast.success("you order is sucessfuly deleted")
                  })
             }
@@ -47,27 +47,27 @@ const Order = () => {
                                 format_day === order.Date ? <p className='w-[40px] h-[40px] rounded-full bg-green-700 text-white absolute top-0 left-0 flex justify-center items-center text-sm font-bold'>New</p> :<></>
                             }
                             <div className='w-[200px] flex justify-center'>
-                                <img src={`http://localhost/MY_PROJECTS/electronic_project/assets/${order.Pic}`} alt="watch" className=' h-[200px] mix-blend-multiply transition-all duration-300 hover:scale-105 cursor-pointer'/>
+                                <img src={`http://localhost/MY_PROJECTS/cosmetic/assets/${order.Pic}`} alt="watch" className=' h-[200px] mix-blend-multiply transition-all duration-300 hover:scale-105 cursor-pointer'/>
                             </div>
                             <div className='space-y-3'>
                                 <div className='flex items-start lg:items-center flex-col lg:flex-row gap-2 xl:gap-5  text-sm xl:text-[16px]'>
-                                    <p className='font-bold'>Product Name : <span className='text-blue-800'>{order.Nom}</span></p>
-                                    <p className='font-bold'>Client Name : <span className='text-blue-800'>{order.Nom_client}</span></p>
+                                    <p className='font-bold'>Product Name : <span className='text-yellow-500'>{order.Nom}</span></p>
+                                    <p className='font-bold'>Client Name : <span className='text-yellow-500'>{order.Nom_client}</span></p>
                                     
                                 </div>
                                
                                 <div className='flex items-start lg:items-center flex-col lg:flex-row gap-2 xl:gap-5 text-sm xl:text-[16px]'>
-                                    <p className='font-bold'>Phone : <span className='text-blue-800'>{order.Tel}</span></p>
-                                    <p className='font-bold'>Date Commande : <span className='text-blue-800'>{order.Date}</span></p>
+                                    <p className='font-bold'>Phone : <span className='text-yellow-500'>{order.Tel}</span></p>
+                                    <p className='font-bold'>Date Commande : <span className='text-yellow-500'>{order.Date}</span></p>
                                   
                                 </div>
                                 <div className='flex items-start lg:items-center flex-col lg:flex-row gap-2 xl:gap-5 text-sm xl:text-[16px]'>
-                                    <p className='font-bold'>price : <span className='text-blue-800'>{order.Price}</span> Mad</p>
-                                    <p className='font-bold'>Qte : <span className='text-blue-800'>{order.Qte}</span></p>
+                                    <p className='font-bold'>price : <span className='text-yellow-500'>{order.Price}</span> Mad</p>
+                                    <p className='font-bold'>Qte : <span className='text-yellow-500'>{order.Qte}</span></p>
                                 </div>
-                                <p className='font-bold'>Total  : <span className='text-blue-800'>{parseInt(order.Price)*parseInt(order.Qte)}</span> Mad</p>
+                                <p className='font-bold'>Total  : <span className='text-yellow-500'>{parseInt(order.Price)*parseInt(order.Qte)}</span> Mad</p>
                                 <div>
-                                    <button className='w-[100px] h-10 text-sm rounded-md sh bg-white text-blue-900 duration-500 transition-all hover:text-white hover:bg-blue-900 flex items-center justify-center gap-3' onClick={()=>handledelete(parseInt(order.order_id),parseInt(order.Qte),parseInt(order.Id))}><MdDelete /> Supprimé</button>
+                                    <button className='w-[100px] h-10 text-sm rounded-md sh bg-white text-yellow-500 duration-500 transition-all hover:text-white hover:bg-yellow-500 flex items-center justify-center gap-3' onClick={()=>handledelete(parseInt(order.order_id),parseInt(order.Qte),parseInt(order.Id))}><MdDelete /> Supprimé</button>
                                 </div>
                             </div>
                         </nav>
@@ -76,7 +76,7 @@ const Order = () => {
             })
         }
     </section> 
-    : <><p className='text-blue-900 font-bold text-center text-[30px] mt-10'>No Order Yet !!</p></>
+    : <><p className='text-yellow-500 font-bold text-center text-[30px] mt-10'>No Order Yet !!</p></>
   }
   </>
   )

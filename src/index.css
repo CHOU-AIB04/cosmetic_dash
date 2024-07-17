@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 .text-sh{
-  text-shadow: 10px 10px 5px rgba(11, 18, 147, 0.753);
+  text-shadow: 10px 10px 5px rgba(229, 205, 98, 0.753);
 }
 .sh{
-  box-shadow: 0 0 10px rgba(11, 18, 147, 0.753);
+  box-shadow: 0 0 10px rgba(229, 205, 98, 0.753);
+}
+.text{
+  color:#d9eee1 ;
 }
